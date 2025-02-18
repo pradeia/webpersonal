@@ -1,0 +1,245 @@
+/* General Styles */
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('Coolvetica\ Rg.otf') format('truetype'); /* Ganti dengan path yang sesuai */
+}
+
+body {
+    font-family: 'Coolvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #2e2e2e;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.nav-links .active {
+    background: #5d5dff;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background: #1a1a1a;
+    text-align: center;
+    height: 100vh; /* Full page */
+    width: 100%;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Jarak antara gambar dan teks */
+    max-width: 1200px;
+    width: 90%;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.hero-image {
+    display: flex;
+    width: 300px;
+    height: auto;
+    background: linear-gradient(rgb(4, 66, 74), rgb(1, 17, 62));
+    border-radius: 10px;
+    padding: 20px;
+    opacity: 0; /* Awalnya tidak terlihat */
+    animation: fadeIn 1s ease-in-out forwards;
+    transition: transform 0.3s ease-in-out; /* Efek hover */
+}
+
+/* Hover effect - Membesarkan gambar saat cursor di atasnya */
+.hero-image:hover {
+    transform: scale(1.1);
+}
+
+/* ==== TEXT ANIMATION ==== */
+.hero-text {
+    flex: 1;
+    text-align: left;
+    opacity: 0; /* Awalnya tidak terlihat */
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.5s; /* Teks muncul setelah gambar */
+}
+
+/* Animasi Fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Geser sedikit ke bawah */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Terapkan animasi ke teks */
+.hero-text {
+    opacity: 0; /* Mulai dari tidak terlihat */
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.5s; /* Delay agar muncul setelah gambar */
+}
+
+/* Terapkan animasi ke gambar */
+.hero-image {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* Full screen */
+    width: 100%;
+    background: #f8f0e3; /* Sesuaikan warna */
+    color: black;
+    padding: 20px;
+}
+
+.about-container {
+    max-width: 800px;
+    width: 90%;
+}
+
+.section-title {
+    font-size: 70px;
+    font-weight: 250px;
+}
+
+/* ==== ANIMASI FADE-IN SAAT MASUK ==== */
+.about {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.3s; /* Sedikit delay setelah halaman dibuka */
+}
+
+/* Experience Section */
+.experience {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* Full screen */
+    width: 100%;
+    background: #374785;
+    padding: 30px;
+}
+
+.experience-container {
+    max-width: 800px;
+    width: 90%;
+}
+
+.experience-grid {
+    display: flex;
+    font-size: 30px;
+    color: #1a1a1a;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #a8a8a8;
+    border-radius: 4px;
+    padding: 5px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Internship Section */
+.internship {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* Full screen */
+    width: 100%;
+    background: #ff6700;
+    padding: 30px;
+}
+
+.internship-container {
+    max-width: 800px;
+    width: 90%;
+}
+
+.internship ul {
+    list-style: none;
+    padding: 0;
+}
+
+.internship li {
+    padding: 5px;
+    background: #f0f0f0;
+    color: black;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+/* Footer */
+footer {
+    background: #2e2e2e;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+@media screen and (max-width: 768px){
+    .hero-container {
+        flex-direction: column; /* Ubah jadi vertikal */
+        text-align: center;
+    }
+    .hero-image {
+        width: 180px; /* Kecilkan gambar */
+        height: 180px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem; /* Kecilkan font agar pas */
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
